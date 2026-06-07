@@ -3,3 +3,4 @@ aes.key
 cert.pem
 key.pem
 medical_rag.db
+__pycache__/

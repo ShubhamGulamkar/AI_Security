@@ -7,6 +7,9 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --ssl-keyfile=key.pem --ssl-cert
 streamlit run {file name}
 
 
+==================================================================================================================================
+
+
 {
   "username": "doctor1",
   "password": "Doctor@2026Secure"
@@ -19,6 +22,9 @@ streamlit run {file name}
   "password": "Nurse@2026Secure",
   "role": "Nurse"
 }
+
+
+==================================================================================================================================
 
 
 Doctor Upload PDF
@@ -83,3 +89,31 @@ has diabetes
        │
        ▼
 Doctor UI
+
+==================================================================================================================================
+
+git checkout main
+
+git pull origin main
+
+git checkout -b feature/add-rag
+
+# make changes
+
+git add .
+
+git commit -m "Added RAG functionality"
+
+git push -u origin feature/add-rag
+
+Create PR
+
+feature/add-rag
+        ↓
+       main
+
+Merge PR
+
+git checkout main
+
+git pull origin main

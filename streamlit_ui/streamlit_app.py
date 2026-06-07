@@ -38,7 +38,7 @@ if menu == "Register":
         [
             "Doctor",
             "Admin",
-            "Patient"
+            "Nurse"
         ]
     )
 
