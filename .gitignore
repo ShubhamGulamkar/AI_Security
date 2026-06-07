@@ -1,0 +1,5 @@
+.env
+aes.key
+cert.pem
+key.pem
+medical_rag.db
