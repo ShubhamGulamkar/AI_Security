@@ -37,3 +37,4 @@ loguru
 httpx
 
 argon2-cffi
+python-dotenv

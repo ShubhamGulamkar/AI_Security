@@ -19,3 +19,67 @@ streamlit run {file name}
   "password": "Nurse@2026Secure",
   "role": "Nurse"
 }
+
+
+Doctor Upload PDF
+       │
+       ▼
+Store Encrypted PDF
+(SQLite)
+       │
+       ▼
+Decrypt In Memory
+       │
+       ▼
+PDF Text Extraction
+       │
+       ▼
+PHI Detection
+       │
+       ▼
+PHI Masking
+
+John Smith
+      ↓
+[PATIENT_001]
+
+MRN 123456
+      ↓
+[MRN_001]
+
+       │
+       ▼
+Store Encrypted Mapping
+(SQLite)
+       │
+       ▼
+Chunking
+       │
+       ▼
+OpenAI Embeddings
+       │
+       ▼
+FAISS Vector Store
+       │
+       ▼
+Retrieve Relevant Chunks
+       │
+       ▼
+GPT-4o
+       │
+       ▼
+Summary with Tokens
+
+[PATIENT_001]
+has diabetes
+
+       │
+       ▼
+Re-identification
+
+John Smith
+has diabetes
+
+       │
+       ▼
+Doctor UI
