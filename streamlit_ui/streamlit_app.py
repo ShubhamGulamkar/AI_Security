@@ -16,7 +16,8 @@ menu = st.sidebar.selectbox(
         "Register",
         "Login",
         "Upload Document",
-        "Download Document"
+        "Download Document",
+        "Generate Summary"
     ]
 )
 
@@ -169,3 +170,50 @@ if menu == "Download Document":
 
             st.error(response.text)
 
+if menu == "Generate Summary":
+
+    st.header("Generate AI Summary")
+
+    token = st.session_state.get("token")
+
+    if not token:
+        st.error("Login First")
+        st.stop()
+
+    document_id = st.text_input(
+        "Document ID"
+    )
+
+    if st.button("Generate Summary"):
+
+        headers = {
+            "Authorization":
+            f"Bearer {token}"
+        }
+
+        response = requests.post(
+            f"{BASE_URL}/rag/summary/{document_id}",
+            headers=headers,
+            verify=False
+        )
+
+        if response.status_code == 200:
+
+            result = response.json()
+
+            st.success(
+                "Summary Generated Successfully"
+            )
+
+            st.subheader(
+                "AI Summary"
+            )
+
+            st.write("Full API Response:")
+            st.json(result)
+
+        else:
+
+            st.error(
+                response.text
+            )
